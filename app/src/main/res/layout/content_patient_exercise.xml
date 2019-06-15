@@ -9,60 +9,55 @@
     tools:showIn="@layout/app_bar_patient_exercise">
 
     <TextView
-        android:id="@+id/tv_connection_prompt"
-        android:layout_width="149dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="304dp"
-        android:text="Connect devices"
+        android:id="@+id/tv_set_activity"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorPrimaryDark"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.556"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Layout_on_connected"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintTop_toTopOf="@+id/Layout_onScan"
+        app:layout_constraintVertical_bias="0.389"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <LinearLayout
-    android:id="@+id/Layout_onScan"
-    android:layout_width="395dp"
-    android:layout_height="186dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginBottom="8dp"
-    android:orientation="vertical"
-    app:layout_constraintBottom_toTopOf="@+id/tv_connection_prompt"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.098">
+        android:id="@+id/Layout_onScan"
+        android:layout_width="395dp"
+        android:layout_height="186dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tv_on_scan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Scanning for devices"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:textSize="30sp" />
 
-    <ProgressBar
-    android:id="@+id/progressBar_scan"
-    style="?android:attr/progressBarStyle"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:visibility="visible"
-    tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="69dp" />
+        <ProgressBar
+            android:id="@+id/progressBar_scan"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="69dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/Layout_on_connected"
-        android:layout_width="402dp"
-        android:layout_height="397dp"
+        android:layout_width="398dp"
+        android:layout_height="310dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -90,35 +85,38 @@
             app:srcCompat="@drawable/sole_right" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_left_charge"
-        android:layout_width="85dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="88dp"
+    <Button
+        android:id="@+id/btn_connection_prompt_left"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:textColor="@android:color/black"
+        android:text="Connect Left"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Layout_on_connected"
-        app:layout_constraintVertical_bias="0.571"
-        tools:visibility="visible" />
+        app:layout_constraintVertical_bias="0.282"
+        tools:visibility="invisible" />
 
-    <TextView
-        android:id="@+id/tv_right_charge"
-        android:layout_width="85dp"
-        android:layout_height="56dp"
+    <Button
+        android:id="@+id/btn_connection_prompt_right"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="monospace"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/black"
-        android:textSize="36sp"
+        android:layout_marginBottom="8dp"
+        android:text="Connect Right"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_left_charge"
+        app:layout_constraintStart_toEndOf="@+id/btn_connection_prompt_left"
         app:layout_constraintTop_toBottomOf="@+id/Layout_on_connected"
-        tools:visibility="visible" />
+        app:layout_constraintVertical_bias="0.263"
+        tools:visibility="invisible" />
 
 </android.support.constraint.ConstraintLayout>
